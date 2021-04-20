@@ -1,0 +1,22 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: tensorflow-mnist
+  namespace: eunbin
+spec:
+  name: mnist
+  predictors:
+  - graph:
+      children: []
+      implementation: TENSORFLOW_SERVER
+      modelUri: "pvc://seldon-models-pvc/export"
+      name: mnist-model
+      parameters:
+        - name: signature_name
+          type: STRING
+          value: serving_default
+        - name: model_name
+          type: STRING
+          value: mnist-model
+    name: default
+    replicas: 1

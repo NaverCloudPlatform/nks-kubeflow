@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cifar10-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: #{NAS 마운트 정보 중 IP 부분 ex. 10.250.53.86}
+    path: #{NAS 마운트 정보 중 경로 부분 ex. /n2551123_test}

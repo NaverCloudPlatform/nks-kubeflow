@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-pipeline-scheduledworkflow
+  name: ml-pipeline-scheduledworkflow
+spec:
+  selector:
+    matchLabels:
+      app: ml-pipeline-scheduledworkflow
+  template:
+    metadata:
+      labels:
+        app: ml-pipeline-scheduledworkflow
+    spec:
+      containers:
+      - image: io.kr.private-ncr.ntruss.com/ncp-kf-install-registry/ml-pipeline/scheduledworkflow:1.0.0
+        imagePullPolicy: IfNotPresent
+        name: ml-pipeline-scheduledworkflow
+        env:
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+      serviceAccountName: ml-pipeline-scheduledworkflow

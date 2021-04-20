@@ -1,0 +1,10 @@
+apiVersion: "serving.kubeflow.org/v1alpha2"
+kind: "InferenceService"
+metadata:
+  name: "pytorch-cifar10"
+spec:
+  default:
+    predictor:
+      pytorch:
+        storageUri: "pvc://cifar10-pvc/models/pytorch/cifar10/"
+        modelClassName: "Net" # 모델 정의시 사용한 class name

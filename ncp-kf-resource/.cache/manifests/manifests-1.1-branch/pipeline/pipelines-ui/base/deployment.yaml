@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-pipeline-ui
+  name: ml-pipeline-ui
+spec:
+  selector:
+    matchLabels:
+      app: ml-pipeline-ui
+  template:
+    metadata:
+      labels:
+        app: ml-pipeline-ui
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      containers:
+      - name: ml-pipeline-ui
+        image: io.kr.private-ncr.ntruss.com/ncp-kf-install-registry/ml-pipeline/frontend:1.0.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: ALLOW_CUSTOM_VISUALIZATIONS
+          value: "true"
+        ports:
+        - containerPort: 3000
+      serviceAccountName: ml-pipeline-ui

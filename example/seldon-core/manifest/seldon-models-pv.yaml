@@ -1,0 +1,13 @@
+"create-pv.yaml" 12L, 194C                                                                                                                                                                                                                  4,16          All
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: seldon-models-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 169.254.3.5
+    path: /n2551841_eunbin
