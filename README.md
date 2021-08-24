@@ -16,3 +16,5 @@
 - 파일
     - [oneshot-installation-kf-to-nks.sh](oneshot-installation-kf-to-nks.sh) kubectl, kfctl 설치후 쉘 스크립트 실행.
     - [test-nkf-install.sh](test-nkf-install.sh) 테스트 관련 스크립트
+
+##
