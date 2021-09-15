@@ -93,7 +93,7 @@ check_system lt 4 $node_cpus
 #mem 12GB under check
 check_system lt 12000000 $node_mems
 
-check_system eq "v1.18" $node_kube_ver
+check_system eq "v1.17" $node_kube_ver
 
 check_system in "kubeflow,istio-system,kfserving-system,knative-serving,cert-manager,auth" $cur_ns
 ###  check minimum requirement end 
