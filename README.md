@@ -1,7 +1,7 @@
 # Kubeflow for Naver Cloud
 ## 설치 환경
 - Naver Cloud Kubernetes Service
-    - 1.17.xx
+    - 1.18.xx
 ## 설치 컴포넌트
 - istio v1.3.1
 - kubeflow v1.1
